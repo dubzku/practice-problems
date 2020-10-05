@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problem 4</title>
+</head>
+<body>
+
+    <script>
+        // Write a function that calculates the score of a word in the game of Scrabble, following this point system:
+
+        // Points/Letters
+        // 1 E, A, I, O, N, R, T, L, S, U
+        // 2 D, G
+        // 3 B, C, M, P
+        // 4 F, H, V, W, Y
+        // 5 K
+        // 8 J, X
+        // 10 Q, Z
+
+        // When countScore('quagmire'); is called, the output should be 20.
+
+        const scoring = {
+            'eaionrtlsu': 1,
+            'dg': 2,
+            'bcmp': 3,
+            'fhvwy': 4,
+            'k': 5,
+            'jx': 8,
+            'qz': 10
+        }
+
+        countScore = (word) => {
+            // Create a place to hold the final score
+            let finalScore = 0;
+
+            // Create an array from the word string
+            const wordArray = [...word];
+            console.log(wordArray);
+
+            // Loop over the word array
+            wordArray.forEach((letter) => {
+                // 'set' is the keys in the scoring object 
+                for (set in scoring) {
+                    // if that particular set of characters includes the letter 
+                    if (set.includes(letter)) {
+                        // add to the final score
+                        // scoring[set] is accessing a value in the scoring object
+                        finalScore = scoring[set] + finalScore
+                    }
+
+                }
+
+            })
+            return finalScore
+        }
+
+        console.log(countScore('quagmire'));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problem 1</title>
+</head>
+<body>
+
+    <script>
+        // Define a function that takes an array of strings, and returns the most commonly occurring string in that array.
+
+        // Pseudocode Steps
+        // need to iterate through array and count occurrences of each string
+        // need a for loop to iterate through the array 
+        // need empty object to store the count occurrences in 
+
+
+        const cats = ["Tom", "Fluffy", "Tom", "Bella", "Tom", "Tom", "Chloe", "Tom", "Chloe", "Bella", "Bella", "Bella"]
+
+        mostCommon = (array) => {
+            let counts = {}; // count occurrences of item here
+            let compare = 0; // compare using a stored value
+            let mostFrequent; // variable for storing the most frequent item 
+
+            // this loop will run as long as i is less than the length of the array
+            for (let i = 0; i < array.length; i++) {
+                // inside the loop, save the item of the array we are iterating on into the variable 'word'
+                const word = array[i]; // ex. could be 'Tom'
+
+                // COUNTING OCCURRENCES OF THE ITEM
+                // check if counts object has item whatever value is stored in word
+                if (counts[word] === undefined) { // if counts[word] doesn't exist
+                    counts[word] = 1; // set counts[word] value to 1 - equivalent of counts.Tom - you are filling the object here
+                } else { //if it exists
+                    counts[word] = counts[word] + 1 // increment the existing value by 1
+                }
+
+                // checking if counts[word] (ex. Tom) is greater than the compare value, which is 0 at the beginning of loop
+                if (counts[word] > compare) { // if counts[word] > 0 (first time)
+                    compare = counts[word]; // set compare to counts[word] (ex. if counts['Tom'] is 2, then 2 is greater than 0, and 2 will be set as the new value of compare)
+                    mostFrequent = word; // set mostFrequent value 
+                }
+            }
+            console.log(mostFrequent);
+        }
+
+        mostCommon(cats);
+
+
+
+    </script>
+</body>
+</html>

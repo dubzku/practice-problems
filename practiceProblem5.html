@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problem 5</title>
+</head>
+<body>
+    <script>
+
+        // Picture a power dial, the dial gets turned up or down based on the numbers in the following collections. What will the final number on the power dial show?
+
+        // Given,
+
+        const setOne = [13, 9, 8, 1, -15, 10, 16, -17, 8, 8, 17, -6, 17, 18];
+
+        const setTwo = ["13", "9", "8", "1", "-15", "10", "16", "-17", "8", "8", "17", "-6", "17", "18"]
+
+        setDial = (arraySet) => {
+            const values = arraySet.map(num => parseInt(num));
+            return values.reduce((a,b) => a + b)
+        }
+
+        console.log(setDial(setOne));
+        console.log(setDial(setTwo));
+
+
+    </script>
+</body>
+</html>

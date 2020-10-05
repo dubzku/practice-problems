@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problem 3</title>
+</head>
+<body>
+
+    <script>
+        // Write a function that will loop through a list of integers and print the index of each element after a 3 second delay.
+
+        // Pseudocode
+        // list of integers = array
+        // loop through = for loop 
+        // 3 second delay = setTimeout 
+
+        const integers = [2, 4, 6, 8, 10]; 
+
+        printIndex = (array) => {
+            setTimeout(() => {
+                for (let i = 0; i < array.length; i++) {
+                console.log('index: ', i, 'integer: ', array[i]);
+            }
+            }, 3000)
+        }
+
+        printIndex(integers);
+
+    </script>
+</body>
+</html>
